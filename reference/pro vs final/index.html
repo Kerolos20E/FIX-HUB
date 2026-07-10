@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIXHUB Auth Flow</title>    <link rel="stylesheet" href="style/style.css">
+</head>
+<body class="auth-body">
+    <main class="container-fluid min-vh-100 p-0">
+        <div class="row g-0 min-vh-100">
+            <section class="col-12 col-lg-6 left-panel d-flex align-items-center justify-content-center p-4 p-lg-5">
+                <div class="d-flex align-items-center gap-3 brand-wrap">
+                    <div class="brand-mark d-flex align-items-center justify-content-center">
+                        <span>H</span>
+                    </div>
+                    <div class="brand-separator"></div>
+                    <div>
+                        <h2 class="brand-title m-0">FIXHUB</h2>
+                        <p class="brand-subtitle mb-0 mt-2">The Smart Way to Fix Your Home</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="col-12 col-lg-6 right-panel d-flex align-items-center justify-content-center p-4 p-lg-5">
+                <h1 class="screen-title">Log <span>in</span></h1>
+                <div class="form-shell w-100">
+
+                    <div id="feedback" class="alert d-none mb-4" role="alert"></div>
+
+                    <form id="roleForm" class="auth-screen active" novalidate>
+                        <label for="userRole" class="form-label auth-label">User :</label>
+                        <select id="userRole" class="form-select auth-input" required>
+                            <option value="customer" selected>Customer</option>
+                            <option value="technical">Technical</option>
+                        </select>
+                        <button type="submit" class="btn auth-btn mt-4">Next</button>
+                    </form>
+
+                    <form id="customerForm" class="auth-screen" novalidate>
+                        <label for="customerName" class="form-label auth-label">Name :</label>
+                        <input id="customerName" type="text" class="form-control auth-input" required>
+
+                        <label for="customerEmail" class="form-label auth-label mt-3">Email :</label>
+                        <input id="customerEmail" type="email" class="form-control auth-input" placeholder="name@email.com" required>
+
+                        <label for="customerPhone" class="form-label auth-label mt-3">Number :</label>
+                        <div class="input-group">
+                            <span class="input-group-text auth-prefix">+20</span>
+                            <input id="customerPhone" type="tel" class="form-control auth-input auth-with-prefix" placeholder="1000000000" required>
+                        </div>
+
+                        <label for="customerNationalId" class="form-label auth-label mt-3">National ID number :</label>
+                        <input id="customerNationalId" type="text" class="form-control auth-input" minlength="14" maxlength="14" required>
+
+                        <label for="customerCity" class="form-label auth-label mt-3">City :</label>
+                        <select id="customerCity" class="form-select auth-input" required>
+                            <option value="Sohag" selected>Sohag</option>
+                            <option value="Cairo">Cairo</option>
+                            <option value="Alexandria">Alexandria</option>
+                            <option value="Giza">Giza</option>
+                            <option value="Assiut">Assiut</option>
+                        </select>
+
+                        <label for="customerAddress" class="form-label auth-label mt-3">Address :</label>
+                        <input id="customerAddress" type="text" class="form-control auth-input" required>
+
+                        <label for="customerPassword" class="form-label auth-label mt-3">Password :</label>
+                        <input id="customerPassword" type="password" class="form-control auth-input" minlength="6" required>
+
+                        <label for="customerConfirmPassword" class="form-label auth-label mt-3">Confirm Password :</label>
+                        <input id="customerConfirmPassword" type="password" class="form-control auth-input" minlength="6" required>
+
+                        <div class="d-flex gap-3 mt-4 flex-wrap">
+                            <button type="button" class="btn auth-btn-secondary" data-back="role">Back</button>
+                            <button type="submit" class="btn auth-btn">Create Account</button>
+                        </div>
+                    </form>
+
+                    <form id="technicalForm" class="auth-screen" novalidate>
+                        <label for="technicalName" class="form-label auth-label">Name :</label>
+                        <input id="technicalName" type="text" class="form-control auth-input" required>
+
+                        <label for="technicalEmail" class="form-label auth-label mt-3">Email :</label>
+                        <input id="technicalEmail" type="email" class="form-control auth-input" placeholder="name@email.com" required>
+
+                        <label for="technicalPhone" class="form-label auth-label mt-3">Number :</label>
+                        <div class="input-group">
+                            <span class="input-group-text auth-prefix">+20</span>
+                            <input id="technicalPhone" type="tel" class="form-control auth-input auth-with-prefix" placeholder="1000000000" required>
+                        </div>
+
+                        <label for="technicalNationalId" class="form-label auth-label mt-3">National ID number :</label>
+                        <input id="technicalNationalId" type="text" class="form-control auth-input" minlength="14" maxlength="14" required>
+
+                        <label for="technicalCity" class="form-label auth-label mt-3">City :</label>
+                        <select id="technicalCity" class="form-select auth-input" required>
+                            <option value="Sohag" selected>Sohag</option>
+                            <option value="Cairo">Cairo</option>
+                            <option value="Alexandria">Alexandria</option>
+                            <option value="Giza">Giza</option>
+                            <option value="Assiut">Assiut</option>
+                        </select>
+
+                        <label for="technicalSpecialty" class="form-label auth-label mt-3">Specialty :</label>
+                        <select id="technicalSpecialty" class="form-select auth-input" required>
+                            <option value="Electrical Technician" selected>Electrical Technician</option>
+                            <option value="Plumber">Plumber</option>
+                            <option value="Carpenter">Carpenter</option>
+                            <option value="Painter">Painter</option>
+                        </select>
+
+                        <label for="technicalPassword" class="form-label auth-label mt-3">Password :</label>
+                        <input id="technicalPassword" type="password" class="form-control auth-input" minlength="6" required>
+
+                        <label for="technicalConfirmPassword" class="form-label auth-label mt-3">Confirm Password :</label>
+                        <input id="technicalConfirmPassword" type="password" class="form-control auth-input" minlength="6" required>
+
+                        <div class="d-flex gap-3 mt-4 flex-wrap">
+                            <button type="button" class="btn auth-btn-secondary" data-back="role">Back</button>
+                            <button type="submit" class="btn auth-btn">Create Account</button>
+                        </div>
+                    </form>
+
+                    <form id="loginForm" class="auth-screen" novalidate>
+                        <label for="loginEmail" class="form-label auth-label">Email :</label>
+                        <input id="loginEmail" type="email" class="form-control auth-input" placeholder="name@email.com" required>
+
+                        <label for="loginPassword" class="form-label auth-label mt-3">Password :</label>
+                        <input id="loginPassword" type="password" class="form-control auth-input" required>
+
+                        <a href="#" id="forgotLink" class="auth-link d-inline-block mt-3">Forget Password?</a>
+
+                        <button type="submit" class="btn auth-btn mt-4">Sign in</button>
+                        <a href="#" id="openRoleFromLogin" class="auth-link d-block mt-3">Create Account</a>
+                    </form>
+
+                    <form id="verifyForm" class="auth-screen" novalidate>
+                        <label for="verifyEmail" class="form-label auth-label">Email :</label>
+                        <input id="verifyEmail" type="email" class="form-control auth-input" placeholder="name@email.com" required>
+
+                        <a href="#" id="resendCode" class="auth-link d-inline-block mt-3">Resend another code?</a>
+
+                        <label for="verifyCode" class="form-label auth-label mt-3">Code :</label>
+                        <input id="verifyCode" type="text" class="form-control auth-input" maxlength="6" required>
+
+                        <div class="d-flex gap-3 mt-4 flex-wrap">
+                            <button type="button" class="btn auth-btn-secondary" data-back="login">Back</button>
+                            <button type="submit" class="btn auth-btn">Verify</button>
+                        </div>
+                    </form>
+
+                    <form id="resetForm" class="auth-screen" novalidate>
+                        <label for="newPassword" class="form-label auth-label">New Password :</label>
+                        <input id="newPassword" type="password" class="form-control auth-input" minlength="6" required>
+
+                        <label for="confirmResetPassword" class="form-label auth-label mt-3">Confirm Password :</label>
+                        <input id="confirmResetPassword" type="password" class="form-control auth-input" minlength="6" required>
+
+                        <div class="d-flex gap-3 mt-4 flex-wrap">
+                            <button type="button" class="btn auth-btn-secondary" data-back="login">Back</button>
+                            <button type="submit" class="btn auth-btn">Save Password</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>    <script src="javascript/app.js"></script>
+</body>
+</html>
